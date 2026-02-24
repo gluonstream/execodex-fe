@@ -142,7 +142,7 @@ export function Vault({ user }: VaultProps) {
   }
 
   return (
-    <div className="vault-container">
+    <div className="vault-container glass-panel">
       <h2>Vault</h2>
       <p>Secure storage for {user.username}</p>
 

@@ -4,21 +4,13 @@ import './App.css'
 import { Layout } from './components/Layout'
 import { Vault } from './components/Vault'
 import { About } from './components/About'
+import { LandingPage } from './components/landing/LandingPage'
 
 interface UserInfo {
   username: string;
   name: string;
   email: string;
   roles: string[];
-}
-
-function Home() {
-  return (
-    <div className="home">
-      <h1>Welcome to Execodex!</h1>
-      <p>Securely manage your execution environments and secrets.</p>
-    </div>
-  )
 }
 
 function App() {
@@ -40,7 +32,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Layout user={user} />}>
-          <Route index element={<Home />} />
+          <Route index element={<LandingPage />} />
           <Route path="vault" element={<Vault user={user} />} />
           <Route path="about" element={<About />} />
         </Route>
