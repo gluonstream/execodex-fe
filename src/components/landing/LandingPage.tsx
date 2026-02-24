@@ -1,13 +1,10 @@
 import { motion } from 'framer-motion';
 import { Shield, Share2, Zap, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { FractalBackground } from './FractalBackground';
 
 export function LandingPage() {
   return (
     <div className="landing-container">
-      <FractalBackground />
-      
       <div className="landing-content-wrapper">
         <section className="hero">
           <motion.div 
@@ -22,11 +19,11 @@ export function LandingPage() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="logo-glow"
             >
-              <h1 className="glitch-text" data-text="s4v3.net">s4v3.net</h1>
+              <h1 className="glitch-text" data-text="S4V3">S<span className="logo-alt">4</span>V<span className="logo-alt">3</span></h1>
             </motion.div>
             
             <p className="hero-subtitle">
-              Secure. Anonymous. Mathematical. 
+              Secure. Anonymous. Reactive.
               <br />
               The ultimate way to share and save your digital assets.
             </p>

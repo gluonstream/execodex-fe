@@ -33,13 +33,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
-  background-color: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(10px);
+  padding: 1.2rem 4rem;
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--glass-border);
   position: sticky;
   top: 0;
-  z-index: 1000; /* Higher z-index for mobile menu */
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-menu-toggle {
@@ -102,11 +103,6 @@ body {
     display: none;
   }
 
-  .user-welcome {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-  }
-
   .hero-content {
     padding: 2rem;
     border-radius: 1.5rem;
@@ -131,11 +127,59 @@ body {
 }
 
 .nav-brand a {
-  font-weight: 800;
-  font-size: 1.8rem;
   text-decoration: none;
+}
+
+.logo-text {
+  font-weight: 900;
+  font-size: 2.2rem;
   color: #fff;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.nav-brand:hover .logo-text {
+  filter: drop-shadow(0 0 15px rgba(100, 108, 255, 0.5));
+  transform: scale(1.02);
+}
+
+.logo-alt {
+  color: var(--primary-color);
+  margin: 0 1px;
+  font-style: italic;
+  position: relative;
+  text-shadow: 0 0 10px rgba(100, 108, 255, 0.8);
+  animation: logo-flicker 3s infinite;
+}
+
+@keyframes logo-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  95% { opacity: 0.9; }
+  96% { opacity: 1; }
+}
+
+.glitch-text .logo-alt {
+  animation: none; /* Hero logo doesn't need extra flicker as it already glitches */
+}
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-welcome {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(100, 108, 255, 0.4);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .nav-links {
@@ -152,11 +196,29 @@ body {
   font-weight: 500;
   transition: all 0.3s;
   font-size: 1.1rem;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 .nav-links a:hover {
-  color: var(--primary-color);
+  color: #fff;
   text-shadow: 0 0 10px rgba(100, 108, 255, 0.5);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .content {
@@ -164,6 +226,33 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.login-button-grand {
+  text-decoration: none;
+  background: rgba(100, 108, 255, 0.1);
+  color: white !important;
+  padding: 0.7rem 1.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 108, 255, 0.4);
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(5px);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.1);
+}
+
+.login-button-grand:hover {
+  background: rgba(100, 108, 255, 0.3);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(100, 108, 255, 0.4);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 /* Landing Page Styles */

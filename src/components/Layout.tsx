@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { LoginButton } from '../auth/LoginButton';
 import { Menu, X } from 'lucide-react';
+import { FractalBackground } from './landing/FractalBackground';
 
 interface LayoutProps {
   user: { username: string } | null;
@@ -15,9 +16,12 @@ export function Layout({ user }: LayoutProps) {
 
   return (
     <div className="layout">
+      <FractalBackground />
       <nav className="main-nav">
         <div className="nav-brand">
-          <Link to="/" onClick={closeMenu}>s4v3.net</Link>
+          <Link to="/" onClick={closeMenu}>
+            <span className="logo-text">S<span className="logo-alt">4</span>V<span className="logo-alt">3</span></span>
+          </Link>
         </div>
         
         <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
@@ -39,7 +43,7 @@ export function Layout({ user }: LayoutProps) {
 
         <div className="nav-auth desktop-only">
           {user ? (
-            <span>Welcome, {user.username}</span>
+            <span className="user-welcome">Welcome, {user.username}</span>
           ) : (
             <LoginButton />
           )}
