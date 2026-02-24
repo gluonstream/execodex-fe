@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: execodex-fe
-        image: gluonstream/execodex-fe:latest
+        image: moldovean/execodex-fe:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
