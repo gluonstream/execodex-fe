@@ -489,6 +489,35 @@ body {
   background: rgba(100, 108, 255, 0.1);
 }
 
+.song-card {
+  padding: 2.5rem;
+  background: rgba(100, 108, 255, 0.02) !important;
+  border-left: 4px solid var(--primary-color) !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.song-link-container {
+  margin: 1rem 0;
+}
+
+.song-btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.song-note {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  background: rgba(100, 108, 255, 0.05);
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: 1px dashed var(--glass-border);
+}
+
 .section-header {
   display: flex;
   align-items: center;

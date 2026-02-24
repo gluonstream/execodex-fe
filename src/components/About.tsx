@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Cpu, Network, Database, Layout, Terminal, Github, Users } from 'lucide-react';
+import { Cpu, Network, Database, Layout, Terminal, Github, Users, Music } from 'lucide-react';
 
 export function About() {
   const containerVariants = {
@@ -102,6 +102,32 @@ export function About() {
              <span className="namespace-tag">keycloak-namespace</span>
              <span className="namespace-tag">gateway-namespace</span>
              <span className="namespace-tag">traefik</span>
+          </div>
+        </motion.section>
+
+        <motion.section variants={itemVariants} className="example-section">
+          <div className="section-header">
+             <Music className="section-icon" /> 
+             <h3>Shared File Example</h3>
+          </div>
+          <div className="glass-panel song-card">
+            <p>
+              Curious how sharing looks in action? Here is an example of a file shared through S4V3. 
+              It's a song that will open in a different page (because we're not a jukebox... yet).
+            </p>
+            <div className="song-link-container">
+              <a 
+                href="https://minio.s4v3.net/iaka/iaka%20%281%29.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260224T223148Z&X-Amz-SignedHeaders=host&X-Amz-Credential=minioadmin%2F20260224%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=e9ed245de945e932c4ee7bd5e0f8b9bb1beedd73c8cd57bbfc8a12069cebb3d8" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cta-button secondary song-btn"
+              >
+                🎵 Play Shared Song
+              </a>
+            </div>
+            <p className="song-note">
+              Note: This link is ephemeral and will only play until the <strong>3rd of March</strong>. Catch it while it's hot! 📅🔥
+            </p>
           </div>
         </motion.section>
 
