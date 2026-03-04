@@ -26,7 +26,7 @@ export function About() {
         <motion.section variants={itemVariants} className="about-hero">
           <h2 className="glitch-text" data-text="About S4V3">About S<span className="logo-alt">4</span>V<span className="logo-alt">3</span></h2>
           <p className="about-lead">
-            S4V3 is a secure file sharing and storage platform, powered by some <strong>Nobody</strong> wandering the world and an Italian looking for a job.
+            S4V3 is a secure file sharing and storage platform, powered by some <strong>Nobody</strong> wandering the world and an <a href={"https://listellodavide.github.io/"}>Italian</a> looking for a job.
           </p>
         </motion.section>
 

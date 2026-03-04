@@ -4,6 +4,7 @@ import './App.css'
 import { Layout } from './components/Layout'
 import { Vault } from './components/Vault'
 import { About } from './components/About'
+import { Profile } from './components/Profile'
 import { LandingPage } from './components/landing/LandingPage'
 
 interface UserInfo {
@@ -35,6 +36,7 @@ function App() {
           <Route index element={<LandingPage />} />
           <Route path="vault" element={<Vault user={user} />} />
           <Route path="about" element={<About />} />
+          <Route path="profile" element={<Profile user={user} />} />
         </Route>
       </Routes>
     </Router>

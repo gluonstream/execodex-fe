@@ -5,7 +5,12 @@ import { Menu, X } from 'lucide-react';
 import { FractalBackground } from './landing/FractalBackground';
 
 interface LayoutProps {
-  user: { username: string } | null;
+  user: { 
+    username: string;
+    name?: string;
+    email?: string;
+    roles?: string[];
+  } | null;
 }
 
 export function Layout({ user }: LayoutProps) {
@@ -34,7 +39,9 @@ export function Layout({ user }: LayoutProps) {
           <li><Link to="/about" onClick={closeMenu}>About</Link></li>
           <li className="mobile-only">
             {user ? (
-              <span className="user-welcome">Welcome, {user.username}</span>
+              <Link to="/profile" className="user-welcome" onClick={closeMenu}>
+                Welcome, {user.name || user.username}
+              </Link>
             ) : (
               <LoginButton />
             )}
@@ -43,7 +50,9 @@ export function Layout({ user }: LayoutProps) {
 
         <div className="nav-auth desktop-only">
           {user ? (
-            <span className="user-welcome">Welcome, {user.username}</span>
+            <Link to="/profile" className="user-welcome">
+              Welcome, {user.name || user.username}
+            </Link>
           ) : (
             <LoginButton />
           )}
